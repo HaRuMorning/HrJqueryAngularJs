@@ -1,0 +1,2 @@
+# HrJqueryAngularJs
+Jquery + AngularJs ( Directive )
