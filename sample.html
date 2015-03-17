@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head lang="ko">
+<meta charset="euc-kr">
+<title></title>
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+<script src="js/jquery.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/jquery-angularjs-hr-0.0.1.js"></script>
+<script>
+$(function(){
+	//Angluar Modual Scope Setting ( 주의 : 설정 범위가 겹치도록 중복설정시 에러, 중복 설정시 각 범위는 겹치지 않게 처리 )
+	$(document.body).hrAngularJs();
+});
+
+function jqueryValTest(){
+	$('#modeltest2').val('test');
+}
+</script>
+
+</head>
+<body>
+	<div>
+		<input type="text" hr-jq-datepicker="yy-mm-dd" ng-model="modeltest" /> {{modeltest}}
+	</div>
+	<div>
+		<input type="text" hr-jq-datepicker="{
+			dateFormat:'yy/mm/dd',
+			onSelect:function(date){ 
+				alert(date); 
+			}
+		}" />
+	</div>
+
+	<input type="text" id="modeltest2" ng-model="modeltest2" /> {{modeltest2}}
+	<input type="button" onclick="jqueryValTest()" value="test"/>
+</body>
+</html>
